@@ -1,6 +1,6 @@
 <?php if(is_uploaded_file($_FILES['filespic']['tmp_name']))//checks if a file has been selected so it doesnt insert 'Nothing' into the database
 	{
-	//update image if one has already been set
+	//update image if one has already been set or change the query to an INSERT query
 	  $imageupdatequery = 'UPDATE' . $tablename . '  SET ' . $columnname_name . ' = :FILE_NAME , '. $columnname_size . ' = :FILE_SIZE WHERE '.$columnname_user.' = :USERNAME';
     $stmt  = $handler->prepare($imageupdatequery);
     $errors= array();
